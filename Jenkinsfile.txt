@@ -1,0 +1,17 @@
+node {
+    stage 'checkout'
+    git 'https://github.com/bhiapp4/crudApp.git'
+}
+pipeline{
+    agent any
+    tools{
+        maven 'maven'
+    }
+    stages{
+        stage('building artifact') {
+            steps {
+                sh 'mvn clean test package'
+            }
+        }    
+    }
+}
