@@ -5,7 +5,7 @@ node {
 pipeline{
     agent any
     tools{
-        maven 'maven'
+        maven 'mvn'
     }
     stages{
         stage('building artifact') {
